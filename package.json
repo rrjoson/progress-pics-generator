@@ -1,0 +1,24 @@
+{
+  "name": "mf-progress-pics-generator",
+  "description": "",
+  "version": "0.0.9",
+  "keywords": [],
+  "dependencies": {
+    "date-fns": "2.9.0",
+    "konva": "4.1.2",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "react-konva": "16.12.0-0",
+    "tabletop": "1.6.2",
+    "use-image": "1.0.5"
+  },
+  "devDependencies": {
+    "react-scripts": "2.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
