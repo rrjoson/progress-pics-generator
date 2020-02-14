@@ -1,14 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { render } from "react-dom";
 import { Stage, Layer, Image, Text } from "react-konva";
 import useImage from "use-image";
-import Tabletop from "tabletop";
 import { format } from "date-fns";
-
-const GOOGLE_SHEET_KEY =
-  "https://docs.google.com/spreadsheets/d/1SWneV1qIwUe2hHzGG3mL9Uzt8QcwusX8o7uuyKA2qTY/pubhtml";
-
-// const test = "http://i.imgur.com/fHyEMsl.jpg?" + new Date().getTime();
 
 const App = () => {
   const imageRef = React.useRef();
@@ -18,17 +12,6 @@ const App = () => {
 
   const [img1] = useImage(image1.src, "Anonymous");
   const [img2] = useImage(image2.src, "Anonymous");
-
-  // useEffect(() => {
-  //   Tabletop.init({
-  //     key: GOOGLE_SHEET_KEY,
-  //     callback: properties => {
-  //       setImage1(properties[1]["Before Image"]);
-  //       setImage2(properties[1]["After Image"]);
-  //     },
-  //     simpleSheet: true
-  //   });
-  // }, []);
 
   const readFileAsync = async file => {
     return new Promise((resolve, reject) => {
@@ -57,14 +40,6 @@ const App = () => {
       pixelRatio: 3
     });
     downloadURI(dataURL, "stage");
-  };
-
-  const createImage = data => {
-    return new Promise(resolve => {
-      const img = document.createElement("img");
-      img.onload = () => resolve(img);
-      img.src = data;
-    });
   };
 
   return (
